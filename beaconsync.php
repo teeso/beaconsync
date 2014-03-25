@@ -28,7 +28,7 @@ function init_taxonomies()
 
 function add_namespace()
 {
-	echo 'xmlns:beacon="urn:waded.org:beacon"';
+	echo 'xmlns:beacon="urn:waded-org:beaconsync:1"';
 }
 
 function add_feed_entry()
