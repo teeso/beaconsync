@@ -10,32 +10,82 @@ License: MIT
 GitHub Plugin URI: https://github.com/waded/beaconsync
 */
 
-add_action('init', 'init_taxonomies', 0);
-add_action('atom_ns', 'add_namespace');
-add_action('rss2_ns', 'add_namespace');
-add_filter('atom_entry', 'add_feed_entry');
-add_filter('rss2_item', 'add_feed_entry');
+add_action('init', 'initTaxonomies', 0);
+add_action('atom_ns', 'addNamespace');
+add_action('rss2_ns', 'addNamespace');
+add_filter('atom_entry', 'addBeaconsElementsToEntry');
+add_filter('rss2_item', 'addBeaconsElementsToEntry');
 
-function init_taxonomies()
+function initTaxonomies()
 {
-	register_taxonomy('beacon', 'post',
+	$labels = array(
+		'name'                       => _x( 'Beacon UUID', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Beacon UUID', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Beacon UUID', 'text_domain' ),
+		'all_items'                  => __( 'All UUIDs', 'text_domain' ),
+		'parent_item'                => __( '', 'text_domain' ),
+		'parent_item_colon'          => __( '', 'text_domain' ),
+		'new_item_name'              => __( 'New UUID', 'text_domain' ),
+		'add_new_item'               => __( 'Add New UUID', 'text_domain' ),
+		'edit_item'                  => __( 'Edit UUID', 'text_domain' ),
+		'update_item'                => __( 'Update UUID', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Only the first UUID will be used', 'text_domain' ),
+		'search_items'               => __( 'Search UUIDs', 'text_domain' ),
+		'add_or_remove_items'        => __( '', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from previous UUIDs', 'text_domain' ));
+
+	register_taxonomy('beacon-uuid', 'post',
 		array(
 			'hierarchical' => false,
-			'label' => 'Beacon', 
+			'labels' => $labels,
+			'query_var' => true,
+			'rewrite' => false));
+
+	$labels = array(
+		'name'                       => _x( 'Beacon Major/Minor', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Beacon Major/Minor', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Beacon Major/Minor', 'text_domain' ),
+		'all_items'                  => __( 'All Major/Minors', 'text_domain' ),
+		'parent_item'                => __( '', 'text_domain' ),
+		'parent_item_colon'          => __( '', 'text_domain' ),
+		'new_item_name'              => __( 'New Major/Minor', 'text_domain' ),
+		'add_new_item'               => __( 'Add New Major/Minor', 'text_domain' ),
+		'edit_item'                  => __( 'Edit Major/Minor', 'text_domain' ),
+		'update_item'                => __( 'Update Major/Minor', 'text_domain' ),
+		'separate_items_with_commas' => __( 'E.g. "5.2"', 'text_domain' ),
+		'search_items'               => __( 'Search Major/Minors', 'text_domain' ),
+		'add_or_remove_items'        => __( '', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from previous Major/Minor values', 'text_domain' ));
+
+	register_taxonomy('beacon-majorminor', 'post',
+		array(
+			'hierarchical' => false,
+			'labels' => $labels,
 			'query_var' => true,
 			'rewrite' => false));
 }
 
-function add_namespace()
+function addNamespace()
 {
-	echo 'xmlns:beacon="urn:waded-org:beaconsync:1"';
+	echo 'xmlns:beacon="urn:beaconsync:1"';
 }
 
-function add_feed_entry()
+function addBeaconsElementsToEntry()
 {
-	/* this is just a sample; the taxonomies aren't aligned up with this yet */
-	echo '<beacon:uuid>2b41bbe2-42c2-4b84-ab96-6e9d5509138b</beacon:uuid>';
-	echo '<beacon:major>0</beacon:major>';
-	echo '<beacon:minor>0</beacon:minor>';
+	global $post;
+
+	// We don't intend to support multiple beacons per post, so only take the first
+	echoNothingOrNameOfFirstTerm(get_the_terms($post->ID, 'beacon-uuid'), 
+		'<beacon:uuid>', '</beacon:uuid>');
+	echoNothingOrNameOfFirstTerm(get_the_terms($post->ID, 'beacon-majorminor'), 
+		'<beacon:majorminor>', '</beacon:majorminor>');
+}
+
+function echoNothingOrNameOfFirstTerm($terms, $prefix, $suffix)
+{
+	if (!empty($terms))
+	{
+		echo $prefix . reset($terms)->name . $suffix;
+	}
 }
 
