@@ -20,7 +20,7 @@ To associate a beacon with a post, edit the post. You'll see **Beacon UUID** and
 
 Be sure to click "Update" to save your changes. (I forget to do that even more often than I forget to activate plugins.)
 
-Avoid setting more than 1 UUID or major/minor per post, as this may result in undefined behavior in apps. Using UUID but not major/minor is fine though: for example, if each of your beacons has its own UUID you might choose to set only the UUID and not major/minor. Apps must be compatible with this use.
+Avoid adding more than 1 UUID or major/minor per post, as this may result in undefined behavior in apps. Adding UUID but not major/minor, or major/minor and not UUID is fine though: for example, if each of your beacons has a different UUID you may choose to add only UUID. Apps must support this usage.
 
 How apps should use a beaconsync site
 ---
