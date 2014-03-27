@@ -9,7 +9,7 @@ that work with beacons.
 
 Install the plugin
 ---
-Download https://github.com/waded/beaconsync/archive/master.zip. Upload that file under the Plugins section of your WordPress site's administration screen.
+Download https://github.com/waded/beaconsync/archive/master.zip, and then upload the file in the Plugins section of your WordPress site's administration screens.
 
 Don't forget to activate the plugin after you've uploaded it!
 
