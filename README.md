@@ -2,8 +2,8 @@ What's this for?
 ---
 
 Beaconsync is a WordPress plugin standardizing association between WordPress posts and Bluetooth Low Energy beacons (sometimes better known by Apple's trademark "iBeacon"), so that whenever an app/device gets near a beacon, the app knows which content from a given site is most relevant for that beacon's location.
-This keeps content management simple, familiar, and webby, while enabling a growing class of app/devices
-that display information based BLE signals instead of GPS/Cell/Wifi triangulation.
+This enables a growing class of app/devices that display information based on BLE signal strength rather than GPS/Cell/Wifi triangulation,
+while keeping content management for these apps simple, familiar, and webby.
 
 Install the plugin
 ---
