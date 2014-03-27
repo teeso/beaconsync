@@ -8,16 +8,16 @@ that display content based on location using beacons instead of GPS/Cell/Wifi tr
 
 Install the plugin
 ---
-Download https://github.com/waded/beaconsync/archive/master.zip, and then upload the file in the Plugins section of your WordPress site's administration screens.
+Download https://github.com/waded/beaconsync/archive/master.zip then upload the file in the Plugins section of your WordPress site's administration screens.
 
-Don't forget to activate the plugin after you've uploaded it!
+Don't forget to activate the plugin after you've uploaded it! (I always forget.)
 
 Associate posts with beacons
 ---
 
-To associate a beacon with a post, edit the post. You'll see **Beacon UUID** and **Beacon Major/Minor** sections (peers to Category/Tag sections.) Enter the beacon's UUID (for example *c1dac09d-c494-4a93-826c-664f62c52a10*) and major/minor codes (for example *1.5* for major 1, minor 5) in these sections. Remember to save your changes to the post!
+To associate a beacon with a post, edit the post. You'll see **Beacon UUID** and **Beacon Major/Minor** sections (they're very similar to the built-in *Category* section.) Enter the beacon's UUID (for example *c1dac09d-c494-4a93-826c-664f62c52a10*) and major/minor codes (for example *1.5* for major 1, minor 5) in these sections. Click "Update" to save your changes to the post.
 
-Avoid setting more than one UUID or major/minor per post, as this can result in unexpected behavior. Using one but not the other is fine and may save you time: for example, if each of your beacons has its own UUID you might choose to set only UUID, and not major/minor.
+Avoid setting more than 1 UUID or major/minor per post, as this will result in unexpected behavior. Using UUID but not major/minor is fine though: for example, if each of your beacons has its own UUID you might choose to set only the UUID and not major/minor.
 
 How apps should use a beaconsync site
 ---
