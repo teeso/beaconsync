@@ -1,20 +1,26 @@
-Beaconsync is a WordPress plugin that makes it easy to associate WordPress posts with mobile apps that
-detect Bluetooth Low Energy beacons (also known by Apple's name 'iBeacons") so that whenever the app
-gets near a beacon, it knows which content from your WordPress site is most relevant for that beacon,
-allowing your WordPress site to act as CMS for such apps.
-
-Instlaling the plugin
+What's this for?
 ---
-Download https://github.com/waded/beaconsync/archive/master.zip. Upload that file under the Plugins section of your WordPress site's administration screen. Don't forget to activate the plugin after you've uploaded it.
 
-Associating your posts with beacons
+Beaconsync is a WordPress plugin that makes it possible to associate WordPress posts with apps that
+detect Bluetooth Low Energy beacons (also known by Apple's name 'iBeacons") so that whenever the app/device
+gets near a beacon, the app knows which content from your WordPress site is most relevant for that beacon.
+This keeps content management similar and familiar, and enables a growing class of hybrid mobile/web apps
+that work with beacons.
+
+Install the plugin
+---
+Download https://github.com/waded/beaconsync/archive/master.zip. Upload that file under the Plugins section of your WordPress site's administration screen.
+
+Don't forget to activate the plugin after you've uploaded it!
+
+Associate posts with beacons
 ---
 
 To associate a beacon with a post, edit the post. You'll see **Beacon UUID** and **Beacon Major/Minor** sections (peers to Category/Tag sections.) Enter the beacon's UUID (for example *c1dac09d-c494-4a93-826c-664f62c52a10*) and major/minor codes (for example *1.5* for major 1, minor 5) in these sections. Remember to save your changes to the post!
 
 Avoid setting more than one UUID or major/minor per post, as this can result in unexpected behavior. Using one but not the other is fine and may save you time: for example, if each of your beacons has its own UUID you might choose to set only UUID, and not major/minor.
 
-How apps should use a WordPress beaconsync site
+How apps should use a beaconsync site
 ---
 An special-purpose app that can detect beacons (for example, a city tour app) should sync with a corresponding WordPress beaconsync site using the site's Atom or RSS2 protocol feed to get the current list of beacons and associated content.
 
