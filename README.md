@@ -26,7 +26,7 @@ A special-purpose app that can detect beacons (for example, a city walking tour 
 
 The following examples are for Atom, but RSS2 is very similar.
 
-A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorminor&gt; elements within the corresponding &lt;entry&gt;:
+A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorminor&gt; elements within the corresponding &lt;entry&gt;. For example, this entry for a beacon near "Bar Gernika":
 
 	<entry>
 		<title>Bar Gernika</title>
