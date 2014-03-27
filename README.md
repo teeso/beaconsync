@@ -41,7 +41,7 @@ A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorm
   
 After detecting the beacon *b41bbe2-42c2-4b84-ab96-6e9d5509138b.0.2* the app may choose to follow the corresponding &lt;entry&gt;'s &lt;link&gt; within a web browser frame, or may choose to display other Atom/extension attributes of the &lt;entry&gt; like &lt;title&gt; and &lt;summary&gt;.
 
-The app controls how much of the feed data it caches, and should sync as often as necessary to support addition and repurposing of beacons, and updated content. It should at minimum cache the beacon UUID/majorminor sets, id, and link, for quick response to detection of a new beacon.
+The app controls how much of the feed data it caches, and should sync as often as necessary to support the frequency of addition/repurposing of beacons and updating of content. It should at minimum cache the beacon:uuid, beacon:majorminor, id, and link, for quick response to detection of a new beacon.
 
 History
 ---
