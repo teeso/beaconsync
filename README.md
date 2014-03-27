@@ -14,11 +14,11 @@ Don't forget to activate the plugin after you've uploaded it! (I always forget.)
 Associate posts with beacons
 ---
 
-To associate a beacon with a post, edit the post. You'll see **Beacon UUID** and **Beacon Major/Minor** sections (they're very similar to the built-in *Category* section.) Enter the beacon's UUID (for example *c1dac09d-c494-4a93-826c-664f62c52a10*) and major/minor codes (for example *1.5* for major 1, minor 5) in these sections. Click "Update" to save your changes to the post.
+To associate a beacon with a post, edit the post. You'll see **Beacon UUID** and **Beacon Major/Minor** sections (they're very similar to the built-in *Category* section.) Enter the beacon's UUID, for example *2b41bbe2-42c2-4b84-ab96-6e9d5509138b*, and major/minor values, for example *0.2* for major value 0, minor value 2, in these sections. Click "Update" to save your changes.
 
-![Screenshot of afformentioned sections](https://raw.githubusercontent.com/waded/beaconsync/master/docs/beacon-ui.png "The Beacon UUID and Beacon Major/Minor sections for a post")
+![Screenshot of afformentioned sections](https://raw.githubusercontent.com/waded/beaconsync/master/docs/beacon-ui.png "The Beacon UUID and Beacon Major/Minor sections")
 
-Avoid setting more than 1 UUID or major/minor per post, as this will result in unexpected behavior. Using UUID but not major/minor is fine though: for example, if each of your beacons has its own UUID you might choose to set only the UUID and not major/minor.
+Avoid setting more than 1 UUID or major/minor per post, as this may result in undefined behavior in apps. Using UUID but not major/minor is fine though: for example, if each of your beacons has its own UUID you might choose to set only the UUID and not major/minor. Apps must be compatible with this use.
 
 How apps should use a beaconsync site
 ---
@@ -43,7 +43,7 @@ A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorm
   
 After detecting the beacon *b41bbe2-42c2-4b84-ab96-6e9d5509138b.0.2* the app may choose to follow the corresponding &lt;entry&gt;'s &lt;link&gt; within a web browser frame, or may choose to display other Atom/extension attributes of the &lt;entry&gt; like &lt;title&gt; and &lt;summary&gt;.
 
-The app controls how much of the feed data it caches, and should sync as often as necessary to support the frequency of addition/repurposing of beacons and updating of content. It should at minimum cache the beacon:uuid, beacon:majorminor, id, and link, for quick response to detection of a new beacon.
+The app controls how much of the feed data it caches, and should sync as often as necessary to support the frequency of addition/repurposing of beacons and updating of content. It should at minimum cache the beacon:uuid, beacon:majorminor, and link, for quick response to detection of a beacon that matches that UUID and major/minor.
 
 History
 ---
