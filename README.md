@@ -21,9 +21,9 @@ Avoid setting more than one UUID or major/minor per post, as this can result in 
 
 How apps should use a beaconsync site
 ---
-A special-purpose app that can detect beacons (for example, a city walking tour app) should sync with a corresponding WordPress beaconsync site using the site's Atom or RSS2 protocol feed. This is how the app gets the full list of beacons and associated content it can display from the site.
+A special-purpose app that can detect beacons (for example, a city walking tour app for iPhone) should sync with a corresponding WordPress beaconsync site using WordPress' Atom or RSS2 protocol feed. This is how the app gets the full list of beacons and associated content it can display from the site.
 
-The following examples are for Atom, but RSS2 is very similar.
+The following examples are for Atom (http://www.rfc-base.org/rfc-4287.html), but RSS2 is quite similar. We recommend you use Atom over RSS2, in case we choose to deprecate RSS2 support in the future.
 
 A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorminor&gt; elements within the corresponding &lt;entry&gt;. For example, this entry for a beacon near "Bar Gernika":
 
