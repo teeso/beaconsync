@@ -14,9 +14,11 @@ Don't forget to activate the plugin after you've uploaded it! (I always forget.)
 Associate posts with beacons
 ---
 
-To associate a beacon with a post, edit the post. You'll see **Beacon UUID** and **Beacon Major/Minor** sections (they're very similar to the built-in *Category* section.) Enter the beacon's UUID, for example *2b41bbe2-42c2-4b84-ab96-6e9d5509138b*, and major/minor values, for example *0.2* for major value 0, minor value 2, in these sections. Click "Update" to save your changes.
+To associate a beacon with a post, edit the post. You'll see **Beacon UUID** and **Beacon Major/Minor** sections (they're very similar to the built-in *Category* section.) Add the beacon's UUID, for example *2b41bbe2-42c2-4b84-ab96-6e9d5509138b*, and major/minor values, for example *0.2* for major value 0, minor value 2, in these sections:
 
 ![Screenshot of afformentioned sections](https://raw.githubusercontent.com/waded/beaconsync/master/docs/beacon-ui.png "The Beacon UUID and Beacon Major/Minor sections")
+
+Be sure to click "Update" to save your changes. (I forget to do that even more often than I forget to activate plugins.)
 
 Avoid setting more than 1 UUID or major/minor per post, as this may result in undefined behavior in apps. Using UUID but not major/minor is fine though: for example, if each of your beacons has its own UUID you might choose to set only the UUID and not major/minor. Apps must be compatible with this use.
 
