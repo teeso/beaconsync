@@ -22,7 +22,7 @@ Avoid setting more than one UUID or major/minor per post, as this can result in 
 
 How apps should use a beaconsync site
 ---
-An special-purpose app that can detect beacons (for example, a city tour app) should sync with a corresponding WordPress beaconsync site using the site's Atom or RSS2 protocol feed to get the current list of beacons and associated content.
+A special-purpose app that can detect beacons (for example, a city walking tour app) should sync with a corresponding WordPress beaconsync site using the site's Atom or RSS2 protocol feed. This is how the app gets the full list of beacons and associated content it can display from the site.
 
 The following examples are for Atom, but RSS2 is very similar.
 
@@ -30,15 +30,18 @@ A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorm
 
 	<entry>
 		<title>Bar Gernika</title>
-		<link rel="alternate" type="text/html" href="http://www.boisebeaconblog.com/posts/bar-gernika" />
+		<link href="http://www.boisebeaconblog.com/posts/bar-gernika" />
 		<id>http://www.boisebeaconblog.com/postid/1</id>
-		<published>2014-03-26T06:59:04Z</published>
+		<published>2003-12-13T18:30:02Z</published>
+		<updated>2014-03-26T06:59:04Z</updated>
 		<summary>Bar Gernika has been a fixture on the Basque Block for almost 20 years and serves authentic Basque foods, wine and desserts. Try the croquetas!</summary>
 		<beacon:uuid>2b41bbe2-42c2-4b84-ab96-6e9d5509138b</beacon:uuid>
 		<beacon:majorminor>0.2</beacon:majorminor>
 	</entry>
   
-After detecting the beacon b41bbe2-42c2-4b84-ab96-6e9d5509138b with major/minor 0.2 the app may choose to follow the &lt;link href&gt; for the corresponding &lt;entry&gt;, or may choose to display other Atom/extension properties of the &lt;entry&gt;, for example &lt;title&gt; and &lt;summary&gt;. To reduce network requirements the mobile app may choose to cache feed data (similar to behavior of most RSS reader applications) so as to make an offline database of beacons and metadata always available, and sync as often as necessary to support addition and repurposing of beacons, and updated content.
+After detecting the beacon *b41bbe2-42c2-4b84-ab96-6e9d5509138b.0.2* the app may choose to follow the corresponding &lt;entry&gt;'s &lt;link&gt; within a web browser frame, or may choose to display other Atom/extension attributes of the &lt;entry&gt; like &lt;title&gt; and &lt;summary&gt;.
+
+The app controls how much of the feed data it caches, and should sync as often as necessary to support addition and repurposing of beacons, and updated content. It should at minimum cache the beacon UUID/majorminor sets, id, and link.
 
 History
 ---
