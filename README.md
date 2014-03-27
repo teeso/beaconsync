@@ -35,7 +35,9 @@ A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorm
 		<id>http://www.boisebeaconblog.com/postid/1</id>
 		<published>2003-12-13T18:30:02Z</published>
 		<updated>2014-03-26T06:59:04Z</updated>
-		<summary>Bar Gernika has been a fixture on the Basque Block for almost 20 years and serves authentic Basque foods, wine and desserts. Try the croquetas!</summary>
+		<summary>Bar Gernika has been a fixture on the Basque Block for almost 20 years 
+		         and serves authentic Basque foods, wine and desserts.
+		         Try the croquetas!</summary>
 		<beacon:uuid>2b41bbe2-42c2-4b84-ab96-6e9d5509138b</beacon:uuid>
 		<beacon:majorminor>0.2</beacon:majorminor>
 	</entry>
