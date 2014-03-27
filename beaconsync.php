@@ -2,8 +2,8 @@
 /*
 Plugin Name: Beaconsync
 Plugin URI: https://github.com/waded/beaconsync
-Description: A plugin for relating posts to Bluetooth Low Energy beacons, and syncing the relationships to devices
-Version: 0.1
+Description: WordPress plugin for assocating posts with Bluetooth Low Energy beacons
+Version: 1.0
 Author: Wade Dorrell
 Author URI: http://waded.org
 License: MIT
@@ -29,7 +29,7 @@ function initTaxonomies()
 		'add_new_item'               => __( 'Add New UUID', 'text_domain' ),
 		'edit_item'                  => __( 'Edit UUID', 'text_domain' ),
 		'update_item'                => __( 'Update UUID', 'text_domain' ),
-		'separate_items_with_commas' => __( 'Only the first UUID will be used', 'text_domain' ),
+		'separate_items_with_commas' => __( '', 'text_domain' ),
 		'search_items'               => __( 'Search UUIDs', 'text_domain' ),
 		'add_or_remove_items'        => __( '', 'text_domain' ),
 		'choose_from_most_used'      => __( 'Choose from previous UUIDs', 'text_domain' ));
@@ -55,7 +55,7 @@ function initTaxonomies()
 		'separate_items_with_commas' => __( 'E.g. "5.2"', 'text_domain' ),
 		'search_items'               => __( 'Search Major/Minors', 'text_domain' ),
 		'add_or_remove_items'        => __( '', 'text_domain' ),
-		'choose_from_most_used'      => __( 'Choose from previous Major/Minor values', 'text_domain' ));
+		'choose_from_most_used'      => __( '', 'text_domain' ));
 
 	register_taxonomy('beacon-majorminor', 'post',
 		array(
