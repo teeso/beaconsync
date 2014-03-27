@@ -4,8 +4,8 @@ What's this for?
 Beaconsync is a WordPress plugin that makes it possible to associate WordPress posts with apps that
 detect Bluetooth Low Energy beacons (also known by Apple's name 'iBeacons") so that whenever the app/device
 gets near a beacon, the app knows which content from your WordPress site is most relevant for that beacon.
-This keeps content management similar and familiar, and enables a growing class of hybrid mobile/web apps
-that work with beacons.
+This keeps content management simple, familiar, and webby, while enabling a growing class of mobile apps
+that display content when they detect a nearby beacon.
 
 Install the plugin
 ---
@@ -41,11 +41,10 @@ A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorm
   
 After detecting the beacon *b41bbe2-42c2-4b84-ab96-6e9d5509138b.0.2* the app may choose to follow the corresponding &lt;entry&gt;'s &lt;link&gt; within a web browser frame, or may choose to display other Atom/extension attributes of the &lt;entry&gt; like &lt;title&gt; and &lt;summary&gt;.
 
-The app controls how much of the feed data it caches, and should sync as often as necessary to support addition and repurposing of beacons, and updated content. It should at minimum cache the beacon UUID/majorminor sets, id, and link.
+The app controls how much of the feed data it caches, and should sync as often as necessary to support addition and repurposing of beacons, and updated content. It should at minimum cache the beacon UUID/majorminor sets, id, and link, for quick response to detection of a new beacon.
 
 History
 ---
 
 This plugin came about as part of a volunteer effort for Discovery Center of Idaho
-(http://www.dcidaho.org) to simplify exhibit signage and add to the depth of information
-available at each exhibit.
+(http://www.dcidaho.org) to improve exhibit signage and depth of available information. Please feel free to use it and give me feedback!
