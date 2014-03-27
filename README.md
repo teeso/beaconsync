@@ -28,7 +28,7 @@ A special-purpose app that can detect beacons (for example, a city walking tour 
 
 The following examples are for Atom (http://www.rfc-base.org/rfc-4287.html), but RSS2 is quite similar. We recommend you use Atom over RSS2, in case we choose to deprecate RSS2 support in the future.
 
-A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorminor&gt; elements within the corresponding &lt;entry&gt;. For example, this post for a beacon near "Bar Gernika":
+A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorminor&gt; elements within the corresponding &lt;entry&gt;, for example:
 
 	<entry>
 		<title>Bar Gernika</title>
@@ -39,11 +39,13 @@ A post associated with a beacon has &lt;beacon:uuid&gt; and/or &lt;beacon:majorm
 		<summary>Bar Gernika has been a fixture on the Basque Block for almost 20 years 
 		         and serves authentic Basque foods, wine and desserts.
 		         Try the croquetas!</summary>
+		<!-- ... -->
 		<beacon:uuid>2b41bbe2-42c2-4b84-ab96-6e9d5509138b</beacon:uuid>
 		<beacon:majorminor>0.2</beacon:majorminor>
+		<!-- ... -->
 	</entry>
   
-After detecting the beacon *b41bbe2-42c2-4b84-ab96-6e9d5509138b.0.2* the app may choose to follow the corresponding &lt;entry&gt;'s &lt;link&gt; within a web browser frame, or may choose to display other Atom/extension attributes of the &lt;entry&gt; like &lt;title&gt; and &lt;summary&gt;.
+After detecting the beacon *b41bbe2-42c2-4b84-ab96-6e9d5509138b.0.2* the app may choose to follow the corresponding &lt;entry&gt;'s &lt;link&gt; within a web browser frame, or may choose to display other Atom element values like &lt;title&gt; and &lt;summary&gt;, or Atom extension element values.
 
 The app controls how much of the feed data it caches, and should sync as often as necessary to support the frequency of addition/repurposing of beacons and updating of content. It should at minimum cache the beacon:uuid, beacon:majorminor, and link, for quick response to detection of a beacon that matches that UUID and major/minor.
 
