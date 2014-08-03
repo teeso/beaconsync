@@ -1,9 +1,7 @@
 What's this for?
 ---
 
-Beaconsync is a WordPress plugin standardizing association between WordPress posts and Bluetooth Low Energy beacons (sometimes better known by Apple's trademark "iBeacon"), so that whenever an app/device gets near a beacon, the app knows which content from a given site is most relevant for that beacon's location.
-This enables a growing class of app/devices that display information based on BLE signal strength rather than GPS/Cell/Wifi triangulation,
-while keeping content management for these apps simple, familiar, and webby.
+Beaconsync is a pattern, and WordPress plugin, associating WordPress content and Bluetooth 4 proximity beacons. This enables a growing class of app that use beacons for accurate positioning, while keeping content management for such apps simple, familiar, and webby. The pattern & plugin can be applied in apps that use any beacon spec, incuding AltBeacon and iBeacon.
 
 Install the plugin
 ---
@@ -24,7 +22,7 @@ Avoid adding more than 1 UUID or major/minor per post, as this may result in und
 
 How apps should use a beaconsync site
 ---
-A special-purpose app that can detect beacons (for example, a city walking tour app for iPhone) should sync with a corresponding WordPress beaconsync site using WordPress' Atom or RSS2 protocol feed. This is how the app gets the full list of beacons and associated content it can display from the site.
+A special-purpose app that can detect beacons (for example, a city walking tour app) should sync with a corresponding WordPress beaconsync site using WordPress' Atom or RSS2 protocol feed. This is how the app gets the full list of beacons and associated content it can display from the site.
 
 The following examples are for Atom (http://www.rfc-base.org/rfc-4287.html), but RSS2 is quite similar. We recommend you use Atom over RSS2, in case we choose to deprecate RSS2 support in the future.
 
