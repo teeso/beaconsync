@@ -1,7 +1,7 @@
 What's this for?
 ---
 
-Beaconsync is a pattern, and WordPress plugin, associating WordPress content and Bluetooth 4 proximity beacons. This enables a growing class of app that use beacons for accurate positioning, while keeping content management for such apps simple, familiar, and webby. The pattern & plugin can be applied in apps that use any beacon spec, incuding AltBeacon and iBeacon.
+Beaconsync is a pattern, and WordPress plugin, associating WordPress content and Bluetooth 4 proximity beacons. This enables a growing class of app that use beacons for accurate positioning, while keeping content management for such apps simple, familiar, and webby. The pattern & plugin can be applied in apps that use any beacon spec, incuding AltBeacon, although it was originally designed for use with Apple's iBeacon UUID/major/minor metadata.
 
 Install the plugin
 ---
