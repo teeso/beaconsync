@@ -24,7 +24,7 @@ Avoid adding more than 1 UUID or major/minor per post, as this may result in und
 
 Example: How an app can use a beaconsync WordPress site to drive its behavior when it detects a beacon
 ---
-A special-purpose app developed to detect beacons (for example, a city walking tour app) should sync with a corresponding WordPress beaconsync site using the Atom (recommended) or RSS2 (deprecated) Feed URL (https://codex.wordpress.org/WordPress_Feeds). This way the app will be aware of what content is available, associate with which beacon, by examining the <beacon:uuid> and <beacon:majorminor> information provided by the feed.
+A special-purpose app developed to detect beacons (for example, a city walking tour app) should sync with a corresponding WordPress beaconsync site using the Atom (recommended) or RSS2 (deprecated) Feed URL (https://codex.wordpress.org/WordPress_Feeds). This way the app will be aware of what content is available, associate with which beacon, by examining the &lt;beacon:uuid&gt; and &lt;beacon:majorminor&gt; information provided by the feed.
 
 For example, a site the app syncs with has a post associated with a beacon as follows:
 
@@ -43,7 +43,7 @@ For example, a site the app syncs with has a post associated with a beacon as fo
 		<!-- ... -->
 	</entry>
   
-Then after detecting the beacon *b41bbe2-42c2-4b84-ab96-6e9d5509138b.0.2* the app might choose to render the corresponding content/media (for example the <summary> value) directly within the app, or launch the user's browser to the URL specified by <link href>.
+Then after detecting the beacon *b41bbe2-42c2-4b84-ab96-6e9d5509138b.0.2* the app might choose to render the corresponding content/media (for example the &lt;summary&gt; value) directly within the app, or launch the user's browser to the URL specified by &lt;link href&gt;.
 
 History
 ---
